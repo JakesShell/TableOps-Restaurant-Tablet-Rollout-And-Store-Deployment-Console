@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Tablet Rollout Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">Restaurant Operations Dashboard</p>
+            <h1>Restaurant Tablet Rollout Dashboard</h1>
+            <p class="hero-text">
+                Browser-based rollout dashboard for tracking tabletop tablet implementation, pilot goals, staff readiness, and location-level business impact.
+            </p>
+            <div class="hero-actions">
+                <button onclick="scrollToSection('overview')">View Overview</button>
+                <button onclick="scrollToSection('kpis')">View KPIs</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="panel" id="overview">
+            <h2>Executive Overview</h2>
+            <div class="summary-grid" id="summaryGrid"></div>
+        </section>
+
+        <section class="panel" id="goals">
+            <h2>Project Objectives</h2>
+            <div class="card-grid" id="goalsGrid"></div>
+        </section>
+
+        <section class="panel" id="deliverables">
+            <h2>Core Deliverables</h2>
+            <div class="card-grid" id="deliverablesGrid"></div>
+        </section>
+
+        <section class="panel" id="scope">
+            <h2>Scope Review</h2>
+            <div class="scope-grid">
+                <article class="scope-card">
+                    <h3>In Scope</h3>
+                    <ul id="inScopeList"></ul>
+                </article>
+                <article class="scope-card">
+                    <h3>Out Of Scope</h3>
+                    <ul id="outScopeList"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" id="kpis">
+            <h2>Target KPI Dashboard</h2>
+            <div class="card-grid" id="kpiGrid"></div>
+        </section>
+
+        <section class="panel" id="locations">
+            <h2>Pilot Location Focus</h2>
+            <div class="card-grid" id="locationGrid"></div>
+        </section>
+
+        <section class="panel" id="readiness">
+            <h2>Rollout Readiness Checklist</h2>
+            <div class="checklist-grid">
+                <article class="check-card">
+                    <h3>Technology And Integration</h3>
+                    <ul>
+                        <li>Tablet Package Selected</li>
+                        <li>POS Integration Mapped</li>
+                        <li>Connectivity Requirements Reviewed</li>
+                        <li>Pilot Deployment Workflow Defined</li>
+                    </ul>
+                </article>
+                <article class="check-card">
+                    <h3>Operations And Training</h3>
+                    <ul>
+                        <li>Staff Training Plan Prepared</li>
+                        <li>Service Flow Changes Documented</li>
+                        <li>Support Escalation Process Defined</li>
+                        <li>Pilot Monitoring Owners Assigned</li>
+                    </ul>
+                </article>
+                <article class="check-card">
+                    <h3>Business Oversight</h3>
+                    <ul>
+                        <li>KPI Baselines Captured</li>
+                        <li>Revenue Goals Approved</li>
+                        <li>Food Waste Tracking Method Confirmed</li>
+                        <li>Leadership Review Schedule Set</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" id="risks">
+            <h2>Risk And Cost Review</h2>
+            <div class="card-grid" id="riskGrid"></div>
+        </section>
+
+        <section class="panel" id="benefits">
+            <h2>Expected Business Benefits</h2>
+            <div class="card-grid" id="benefitsGrid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Restaurant Tablet Rollout Dashboard • Portfolio Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
