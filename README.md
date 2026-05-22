@@ -1,49 +1,56 @@
-﻿# Restaurant Tablet Rollout Dashboard
+# TableOps Restaurant Tablet Rollout & Store Deployment Console
 
 ## Overview
 
-Restaurant Tablet Rollout Dashboard is a browser-based operations dashboard for coordinating a tabletop tablet pilot rollout across restaurant locations.
+TableOps Restaurant Tablet Rollout & Store Deployment Console is a static browser-based operations dashboard for coordinating a tabletop tablet pilot rollout across restaurant locations.
 
-This project is positioned as a recruiter-ready frontend portfolio piece. It upgrades a static charter into a more practical restaurant operations dashboard that presents project goals, rollout scope, training needs, KPI targets, location focus, risks, and expected business benefits in a clearer decision-friendly format.
+The project turns a rollout charter into a practical command center for reviewing store readiness, pilot KPIs, location blockers, training needs, risk controls, and leadership next steps. It is intentionally implemented with HTML, CSS, and JavaScript only.
 
 ## Real-World Business Use Case
 
 This project maps to practical workflows used by:
 
-- Restaurant Operations Teams
-- Pilot Rollout Coordinators
-- Technology Enablement Teams
-- Training And Adoption Leads
-- Frontend Developers Building Internal Dashboards
+- Restaurant operations teams
+- Pilot rollout coordinators
+- Technology enablement teams
+- Training and adoption leads
+- Frontend developers building internal operations dashboards
 
 A team may need to answer questions such as:
 
-- What are the key business targets of the rollout?
-- What is in scope and out of scope?
-- Which locations are included in the pilot?
-- What should leadership monitor during deployment?
-- What risks could affect adoption, integration, and ROI?
-
-This dashboard is useful for operations planning, leadership review, pilot-readiness tracking, and portfolio demonstration of turning a static charter into a working rollout dashboard.
+- Which pilot locations are ready for tabletop tablet deployment?
+- What KPI targets should leadership monitor?
+- What training, support, and POS integration work still needs attention?
+- Which risks could affect adoption, integration, cost control, and ROI?
+- What should happen before the next pilot review?
 
 ## Key Features
 
-- Executive Overview Cards
-- Project Objectives Section
-- Deliverables Section
-- Scope Review
-- Target KPI Dashboard
-- Pilot Location Focus
-- Rollout Readiness Checklist
-- Risk And Cost Review
-- Expected Business Benefits
-- Responsive Browser-Based UI
+- Full-screen app-shell dashboard layout
+- Sticky full-width top navigation
+- Left viewport sidebar navigation
+- Main workspace for rollout operations
+- Right status/action panel with readiness score, phase, top risks, and next action
+- Executive rollout metrics
+- Location readiness comparison
+- Rollout timeline/status board
+- KPI target cards
+- Risk and blocker grid
+- Training and support checklist
+- Bottom CTA with demo-only actions
+- Responsive collapse for tablet and mobile
+
+## Demo Action Note
+
+Export, report, and review buttons are static demo controls. They show local interface feedback only and do not generate files, call APIs, contact external systems, or perform real deployment actions.
 
 ## Tech Stack
 
 - HTML
 - CSS
 - JavaScript
+
+No React, Vite, npm, backend, or external build tooling is required.
 
 ## Repository Contents
 
@@ -52,6 +59,8 @@ This dashboard is useful for operations planning, leadership review, pilot-readi
 - `script.js`
 - `README.md`
 - `PROJECT.pdf`
+- `AGENTS.md`
+- `DESIGN_SYSTEM.md`
 
 ## How To Run
 
@@ -59,3 +68,12 @@ Open the dashboard in a browser.
 
 ```powershell
 Start-Process .\index.html
+```
+
+## Suggested Manual Testing
+
+- Open the app at desktop width and confirm the sticky top nav, left sidebar, main workspace, and right status panel are visible.
+- Zoom the browser to 75%, 50%, and 25% and confirm the dashboard still uses the full viewport.
+- Test tablet width and confirm the right panel moves below the main workspace.
+- Test mobile width and confirm navigation, cards, and buttons stack cleanly.
+- Click Prepare Pilot Review, View Location Plan, and Export Rollout Summary to confirm the demo-only message updates.

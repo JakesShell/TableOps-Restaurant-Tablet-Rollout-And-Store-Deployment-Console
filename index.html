@@ -1,113 +1,188 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Tablet Rollout Dashboard</title>
+    <title>TableOps Restaurant Tablet Rollout & Store Deployment Console</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-inner">
-            <p class="eyebrow">Restaurant Operations Dashboard</p>
-            <h1>Restaurant Tablet Rollout Dashboard</h1>
-            <p class="hero-text">
-                Browser-based rollout dashboard for tracking tabletop tablet implementation, pilot goals, staff readiness, and location-level business impact.
-            </p>
-            <div class="hero-actions">
-                <button onclick="scrollToSection('overview')">View Overview</button>
-                <button onclick="scrollToSection('kpis')">View KPIs</button>
+    <div class="app-shell">
+        <header class="top-nav">
+            <a class="brand" href="#overview" aria-label="TableOps overview">
+                <span class="brand-mark">TO</span>
+                <span>
+                    <strong>TableOps</strong>
+                    <small>Restaurant Tablet Rollout Console</small>
+                </span>
+            </a>
+            <div class="top-nav-center" aria-label="Pilot deployment summary">
+                <span class="status-pill status-progress">Pilot Phase: Store Readiness</span>
+                <span class="status-pill">2 Pilot Sites</span>
+                <span class="status-pill">Static Demo Console</span>
             </div>
+            <div class="top-nav-actions">
+                <button class="button secondary" type="button" data-demo-action="View Location Plan">View Location Plan</button>
+                <button class="button primary" type="button" data-demo-action="Export Rollout Summary">Export Rollout Summary</button>
+            </div>
+        </header>
+
+        <div class="dashboard-shell">
+            <aside class="side-nav" aria-label="Dashboard navigation">
+                <div class="side-nav-header">
+                    <span class="eyebrow">Deployment Console</span>
+                    <h2>Store Rollout</h2>
+                </div>
+                <nav class="nav-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#locations">Locations</a>
+                    <a href="#timeline">Timeline</a>
+                    <a href="#kpis">KPIs</a>
+                    <a href="#risks">Risks</a>
+                    <a href="#training">Training</a>
+                    <a href="#scope">Scope</a>
+                </nav>
+                <div class="sidebar-card">
+                    <span class="card-label">Primary Goal</span>
+                    <strong>Operational efficiency and revenue lift</strong>
+                    <p>Coordinate tabletop ordering and payment readiness before wider deployment.</p>
+                </div>
+            </aside>
+
+            <main class="workspace">
+                <section class="hero-panel" id="overview">
+                    <div>
+                        <span class="eyebrow">TableOps Command Center</span>
+                        <h1>Restaurant Tablet Rollout & Store Deployment Console</h1>
+                        <p>
+                            A static operations dashboard for coordinating tabletop tablet implementation,
+                            pilot readiness, KPI targets, training needs, location blockers, and leadership review.
+                        </p>
+                    </div>
+                    <div class="hero-actions" aria-label="Primary dashboard actions">
+                        <button class="button primary" type="button" data-demo-action="Prepare Pilot Review">Prepare Pilot Review</button>
+                        <button class="button secondary" type="button" onclick="scrollToSection('timeline')">Review Timeline</button>
+                    </div>
+                </section>
+
+                <section class="metric-grid" id="executiveMetrics" aria-label="Executive rollout metrics"></section>
+
+                <section class="panel" id="locations">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Store Deployment</span>
+                            <h2>Location Readiness Comparison</h2>
+                        </div>
+                        <span class="section-note">Pilot scope: Sauce And Spoon North + Downtown</span>
+                    </div>
+                    <div class="location-grid" id="locationGrid"></div>
+                </section>
+
+                <section class="panel" id="timeline">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Rollout Workflow</span>
+                            <h2>Timeline And Status Board</h2>
+                        </div>
+                        <button class="button ghost" type="button" data-demo-action="Update Rollout Board">Update Board</button>
+                    </div>
+                    <div class="timeline-grid" id="timelineGrid"></div>
+                </section>
+
+                <section class="panel" id="kpis">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Leadership Targets</span>
+                            <h2>KPI Dashboard</h2>
+                        </div>
+                        <span class="section-note">Targets are static demo values from the rollout plan.</span>
+                    </div>
+                    <div class="kpi-grid" id="kpiGrid"></div>
+                </section>
+
+                <section class="panel" id="risks">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Deployment Control</span>
+                            <h2>Risk And Blocker Grid</h2>
+                        </div>
+                        <button class="button ghost" type="button" data-demo-action="Review Risk Plan">Review Risk Plan</button>
+                    </div>
+                    <div class="risk-grid" id="riskGrid"></div>
+                </section>
+
+                <section class="panel" id="training">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Enablement</span>
+                            <h2>Training And Support Checklist</h2>
+                        </div>
+                        <span class="section-note">Designed for store managers, support owners, and training leads.</span>
+                    </div>
+                    <div class="checklist-grid" id="trainingGrid"></div>
+                </section>
+
+                <section class="panel two-column-panel" id="scope">
+                    <div class="scope-card">
+                        <span class="eyebrow">Approved Work</span>
+                        <h2>In Scope</h2>
+                        <ul id="inScopeList"></ul>
+                    </div>
+                    <div class="scope-card muted">
+                        <span class="eyebrow">Guardrails</span>
+                        <h2>Out Of Scope</h2>
+                        <ul id="outScopeList"></ul>
+                    </div>
+                </section>
+
+                <section class="bottom-cta" aria-label="Next rollout actions">
+                    <div>
+                        <span class="eyebrow">Next Leadership Step</span>
+                        <h2>Prepare the pilot review before store expansion decisions.</h2>
+                        <p>These controls are static demo actions for portfolio review. They do not export files or connect to external systems.</p>
+                    </div>
+                    <div class="bottom-actions">
+                        <button class="button primary" type="button" data-demo-action="Prepare Pilot Review">Prepare Pilot Review</button>
+                        <button class="button secondary" type="button" data-demo-action="View Location Plan">View Location Plan</button>
+                        <button class="button secondary" type="button" data-demo-action="Export Rollout Summary">Export Rollout Summary</button>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="status-rail" aria-label="Deployment status and actions">
+                <section class="status-card score-card">
+                    <span class="eyebrow">Readiness Score</span>
+                    <div class="score-ring" aria-label="Readiness score 82 percent">
+                        <span>82%</span>
+                    </div>
+                    <h2>Ready With Watch Items</h2>
+                    <p>Training and POS validation are the final controls before broader deployment.</p>
+                </section>
+
+                <section class="status-card">
+                    <span class="card-label">Active Phase</span>
+                    <strong>Store Readiness Validation</strong>
+                    <div class="progress-track" aria-label="Rollout progress 64 percent">
+                        <span style="width: 64%"></span>
+                    </div>
+                    <small>64% through pilot preparation</small>
+                </section>
+
+                <section class="status-card">
+                    <span class="card-label">Top Risks</span>
+                    <ul class="rail-list" id="topRiskList"></ul>
+                </section>
+
+                <section class="status-card action-card">
+                    <span class="card-label">Next Action</span>
+                    <strong>Confirm POS integration and manager training owners.</strong>
+                    <button class="button primary full-width" type="button" data-demo-action="Prepare Pilot Review">Prepare Pilot Review</button>
+                    <button class="button secondary full-width" type="button" data-demo-action="Export Rollout Summary">Export Rollout Summary</button>
+                    <p class="demo-note" id="demoNotice" aria-live="polite">Demo-only: actions show local feedback and do not create exports.</p>
+                </section>
+            </aside>
         </div>
-    </header>
-
-    <main class="page-shell">
-        <section class="panel" id="overview">
-            <h2>Executive Overview</h2>
-            <div class="summary-grid" id="summaryGrid"></div>
-        </section>
-
-        <section class="panel" id="goals">
-            <h2>Project Objectives</h2>
-            <div class="card-grid" id="goalsGrid"></div>
-        </section>
-
-        <section class="panel" id="deliverables">
-            <h2>Core Deliverables</h2>
-            <div class="card-grid" id="deliverablesGrid"></div>
-        </section>
-
-        <section class="panel" id="scope">
-            <h2>Scope Review</h2>
-            <div class="scope-grid">
-                <article class="scope-card">
-                    <h3>In Scope</h3>
-                    <ul id="inScopeList"></ul>
-                </article>
-                <article class="scope-card">
-                    <h3>Out Of Scope</h3>
-                    <ul id="outScopeList"></ul>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel" id="kpis">
-            <h2>Target KPI Dashboard</h2>
-            <div class="card-grid" id="kpiGrid"></div>
-        </section>
-
-        <section class="panel" id="locations">
-            <h2>Pilot Location Focus</h2>
-            <div class="card-grid" id="locationGrid"></div>
-        </section>
-
-        <section class="panel" id="readiness">
-            <h2>Rollout Readiness Checklist</h2>
-            <div class="checklist-grid">
-                <article class="check-card">
-                    <h3>Technology And Integration</h3>
-                    <ul>
-                        <li>Tablet Package Selected</li>
-                        <li>POS Integration Mapped</li>
-                        <li>Connectivity Requirements Reviewed</li>
-                        <li>Pilot Deployment Workflow Defined</li>
-                    </ul>
-                </article>
-                <article class="check-card">
-                    <h3>Operations And Training</h3>
-                    <ul>
-                        <li>Staff Training Plan Prepared</li>
-                        <li>Service Flow Changes Documented</li>
-                        <li>Support Escalation Process Defined</li>
-                        <li>Pilot Monitoring Owners Assigned</li>
-                    </ul>
-                </article>
-                <article class="check-card">
-                    <h3>Business Oversight</h3>
-                    <ul>
-                        <li>KPI Baselines Captured</li>
-                        <li>Revenue Goals Approved</li>
-                        <li>Food Waste Tracking Method Confirmed</li>
-                        <li>Leadership Review Schedule Set</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel" id="risks">
-            <h2>Risk And Cost Review</h2>
-            <div class="card-grid" id="riskGrid"></div>
-        </section>
-
-        <section class="panel" id="benefits">
-            <h2>Expected Business Benefits</h2>
-            <div class="card-grid" id="benefitsGrid"></div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>Restaurant Tablet Rollout Dashboard • Portfolio Project</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
