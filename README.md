@@ -1,4 +1,8 @@
-# TableOps Restaurant Tablet Rollout & Store Deployment Console
+﻿# TableOps Restaurant Tablet Rollout & Store Deployment Console
+
+## Live Demo
+
+[Open the live deployed app](https://tableops-restaurant-tablet-rollout-console-qko8f6cg3.vercel.app)
 
 ## Overview
 
@@ -77,3 +81,4 @@ Start-Process .\index.html
 - Test tablet width and confirm the right panel moves below the main workspace.
 - Test mobile width and confirm navigation, cards, and buttons stack cleanly.
 - Click Prepare Pilot Review, View Location Plan, and Export Rollout Summary to confirm the demo-only message updates.
+
